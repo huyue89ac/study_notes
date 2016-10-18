@@ -1,0 +1,14 @@
+1. Open Automator.app and choose new "Service" document
+2. In the right tab, set "Service receives" to "no input", then drag and drop "Run AppleScript" action to the workflow:
+"Run AppleScript" is located under "Utility" section.
+3. Set the content of the script to:
+    on run {input, parameters}
+
+      tell application "Terminal"
+        reopen
+        activate
+      end tell
+
+    end run
+4. Save the document as "Open Terminal" (or whatever) and close Automator.app
+5. Go to System Preferences->Keyboard->Keyboard Shortcuts->Services, then scroll until you find your new service under General section and assign it a shortcut.
